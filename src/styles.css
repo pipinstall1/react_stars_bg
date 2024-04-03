@@ -1,0 +1,13 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+button,
+input {
+  position: absolute;
+  z-index: 100;
+  background-color: white;
+  top: 0;
+  left: 0;
+}
