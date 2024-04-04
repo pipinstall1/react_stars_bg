@@ -8,15 +8,14 @@
   ],
   "main": "src/index.js",
   "dependencies": {
+    "@tsparticles/preset-stars": "^3.0.2",
+    "@tsparticles/react": "^3.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-particles": "2.7.1",
-    "react-scripts": "4.0.0",
-    "tsparticles-preset-stars": "2.7.1"
+    "react-scripts": "4.0.0"
   },
   "devDependencies": {
-    "@babel/runtime": "7.13.8",
-    "typescript": "4.1.3"
+    "@babel/runtime": "7.13.8"
   },
   "scripts": {
     "start": "react-scripts start",

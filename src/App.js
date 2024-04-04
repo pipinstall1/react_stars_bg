@@ -1,18 +1,27 @@
-import Particles from "react-particles";
-import { loadStarsPreset } from "tsparticles-preset-stars";
-import { useMemo, useState } from "react";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import { loadStarsPreset } from "@tsparticles/preset-stars";
 
-export default function Home() {
-  const [test, setTest] = useState();
+const Stars = () => {
+  const [init, setInit] = useState(false);
 
-  const particleOptions = {
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadStarsPreset(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+
+  const options = {
     preset: "stars",
   };
 
-  const customInit = async (engine) => {
-    const test = await loadStarsPreset(engine);
-    return test;
-  };
+  if (init) {
+    return <Particles id="tsparticles" options={options} />;
+  }
 
-  return <Particles options={particleOptions} init={customInit} />;
-}
+  return <></>;
+};
+
+export default Stars;
